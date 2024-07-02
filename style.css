@@ -1,9 +1,4 @@
-@font-face {
-    font-family: "oswald";
-    src: url("oswald/oswald-variablefont_wght.ttf");
-    src: url("oswald/oswald-variablefont_wght.woff") format("woff"),
-         url("oswald/oswald-variablefont_wght.svg") format("svg");
-}
+/*это уже не нужно*/
 
 *, *:before, *:after {
     box-sizing: border-box;
@@ -13,10 +8,12 @@
 
 html {
     font-family: "oswald", "Helvetica Neue", sans-serif;
-    font-size: 10px;
+    font-size: 10px;  /* Почему ты решила задать за основу 10px?*/
 }
 
 form {
+     /* задавать ширину или высоту в пикселях как правило не очень хорошая идея.
+    Используй другие единицы измерения (vw,vh,%), а в твоём случае наверное даже этого не надо */
     width: 452px;
     height: 632px;
     background-color: #faab1b;
@@ -39,16 +36,16 @@ form {
         border-radius: 5px;
         background-color: #faab1b;
         border: 2px solid #faab1b;
-        font-family: inherit;
+        font-family: inherit; /* обычно делается выписка всех компонентов у кого какой шрифт */
         line-height: 20px;
         padding: 5px;
-        font-size: 1.5em;
+        font-size: 1.5em; /* чем rem не угодили? :)*/
     }
 
 .form {
     display: grid;
-    grid-template-rows: repeat(8,2fr);
-    gap: 2%;
+    grid-template-rows: repeat(8,2fr); /* внизу описал */
+    gap: 2%; /* а вот gap как раз лучше прописывать в px */
     background-color: #291810;
     border-radius: 5px;
     padding: 10px;
@@ -142,3 +139,15 @@ button {
     justify-content: center;
     }
 
+
+/*
+TODO: доп. замечания:
+- саму таблицу логичнее стилизовать через flex в данном случае, т.к.
+если добавится новое поле, то нужно будет снова лезть в стили и
+фиксить кол-во строк в гриде
+- посмотри в каком порядке принято писать стили, есть общепринятый стандарт (https://netology-university.bitbucket.io/codestyle/css/)
+- цвета можно вынести в переменную
+- padding, margin, border-radius, gap в идеале указывать в rem. Ширину и высоту в vw, vw, %.
+- хотелось бы центровку формы по центру экрана и адаптив хотя бы на два сайза (1500/720)
+- реализацию верхнего блока обсудим отдельно)
+*/
