@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Kartinka</title>
+    <!--вот как нужно было добавить шрифт-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!--    -->
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -19,8 +24,8 @@
     <input type="text" id="name">
     <label for="name">ИМЯ</label>
 
-    <input type="text" id="passportdata">
-    <label for="passportdata">ПАСПОРТНЫЕ ДАННЫЕ</label>
+        <input type="text" id="passport_data">
+        <label for="passport_data">ПАСПОРТНЫЕ ДАННЫЕ</label>
 
     <input type="email" id="email">
     <label for="email">EMAIL</label>
@@ -40,3 +45,15 @@
 
 </body>
 </html>
+
+
+<!--
+TODO:
+Другие замечания:
+- нейминги классов (позже будешь изучать как правильно, пока просто к сведению)
+- найти нормальную свг и вставить её как svg, а не как <img src={'any'} />
+- бест практис это изменить свойство шрифта через css, а не писать всё капсом в коде (свойство text-transform: uppercase)
+- на кнопку повесить класс и сделать стили через класс, а не по тегу
+- сделать поя формы обязательными + добавить базовую валидацию (желательно со стилями -> https://developer.mozilla.org/ru/docs/Learn/Forms/Form_validation)
+-->
+
